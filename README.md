@@ -1,88 +1,119 @@
-Data Preprocessing & Machine Learning Pipeline
+# Data Preprocessing & Machine Learning Pipeline
 
-A comprehensive collection of Jupyter Notebooks outlining best practices for data cleaning, engineering, and predictive modeling using Python, Pandas, and Scikit-Learn. This repository functions as a modular pipeline for handling typical real-world data imperfections and implementing end-to-end classification techniques.
+A modular collection of Jupyter Notebooks covering end-to-end data cleaning, feature engineering, and predictive modeling with Python, Pandas, and Scikit-Learn. Built to handle real-world data imperfections systematically before feeding data into a classification pipeline.
 
-🚀 Repository Overview
+---
 
-The repository is structured sequentially to guide you from raw data auditing up to model engineering and metrics analysis:
+## Repository Structure
 
+```
 .
 ├── 1 Handling Missing Values.ipynb
 ├── 2 Deleting Duplicates.ipynb
 ├── 3 Correcting Inconsistent Formats.ipynb
 ├── 4 Distance and Similarity.ipynb
 └── 5 Week.ipynb
+```
 
+Notebooks are sequenced intentionally — work through them in order to go from raw data auditing to a working classifier.
 
-📂 Notebook Breakdowns
+---
 
-1. Handling Missing Values (1 Handling Missing Values.ipynb)
+## Notebooks
 
-Focused on strategies to manage missing records without introducing statistical skew or losing sample sizing.
+### 1. Handling Missing Values
 
-Concepts Covered: Detecting null cells (NaN), statistical central tendency calculations.
+Strategies for dealing with missing records without introducing statistical skew or losing sample size.
 
-Techniques Used: Forward-filling (ffill) for continuous sequencing and Mean/Median imputation (fillna) for mathematical variables.
+- Detecting null cells (`NaN`)
+- Statistical central tendency calculations
+- Forward-filling (`ffill`) for sequential/time-series data
+- Mean/median imputation (`fillna`) for numeric variables
 
-2. Deleting Duplicates (2 Deleting Duplicates.ipynb)
+---
 
-Identifies and purges redundant row records that can cause data leakage during training stages.
+### 2. Deleting Duplicates
 
-Concepts Covered: Tracking matching index constraints and primary keys.
+Identifies and removes redundant rows that can cause data leakage during training.
 
-Techniques Used: Row indexing audits, filtering criteria using Pandas dataframes.
+- Tracking matching index constraints and primary keys
+- Row indexing audits
+- Filtering criteria with Pandas DataFrames
 
-3. Correcting Inconsistent Formats (3 Correcting Inconsistent Formats.ipynb)
+---
 
-Standardizes structural text data layouts across rows into clean feature schemas.
+### 3. Correcting Inconsistent Formats
 
-Concepts Covered: Date-time parsing variations (e.g., YYYY-MM-DD vs MM/DD/YYYY).
+Standardizes text and date formats across rows into clean, uniform feature schemas.
 
-Techniques Used: Coercing string columns to unified datetime64 types.
+- Handling datetime parsing variations (e.g., `YYYY-MM-DD` vs `MM/DD/YYYY`)
+- Coercing string columns to `datetime64` types
 
-4. Distance and Similarity Metrics (4 Distance and Similarity.ipynb)
+---
 
-A foundational mathematical look at evaluating vectors, text relationships, and continuous spatial data.
+### 4. Distance and Similarity Metrics
 
-Concepts Covered: Spatial geometric distance and lexical sequence modeling.
+A mathematical deep-dive into measuring relationships between vectors, text sequences, and spatial data.
 
-Techniques Used: Manual computing loops vs standard libraries (SciPy) for Euclidean, Manhattan, Minkowski, Hamming, and Longest Common Subsequence (LCS) matrices.
+- Euclidean, Manhattan, and Minkowski distances
+- Hamming distance for categorical/binary data
+- Longest Common Subsequence (LCS) for text
+- Manual loop implementations vs. SciPy equivalents
 
-5. Advanced Analysis & Supervised Pipeline (5 Week.ipynb)
+---
 
-An advanced end-to-end playground exploring dimensionality adjustments and implementing an algorithmic binary classification model.
+### 5. Advanced Analysis & Supervised Pipeline
 
-Dimensionality Reduction: Compares supervised and unsupervised vector projections using Principal Component Analysis (PCA) and Linear Discriminant Analysis (LDA).
+An end-to-end notebook exploring dimensionality reduction and binary classification.
 
-Statistical Distribution Analysis: Inspects continuous data profiles using Skewness and Kurtosis metrics (utilizing datasets like Iris).
+**Dimensionality Reduction**
+- PCA (unsupervised) vs. LDA (supervised) — compared side by side
 
-End-to-End Predictive Model: Explores an evaluation ecosystem via the Titanic survival dataset featuring dataset collection, object feature standardizations, split validation, and a Logistic Regression Classifier mapping out:
+**Statistical Distribution Analysis**
+- Skewness and kurtosis inspection on the Iris dataset
 
-Accuracy Performance
+**End-to-End Classifier (Titanic dataset)**
+- Data collection and feature standardization
+- Train/test split and validation
+- Logistic Regression classifier
+- Evaluation: accuracy, precision, recall, confusion matrix
 
-Precision & Recall
+---
 
-Confusion Matrix evaluations
+## Setup
 
-🛠️ Requirements & Installation
+**Requirements:** Python 3.12+
 
-To run these notebooks locally, ensure you have Python 3.12+ installed along with the required processing libraries:
+```bash
+# Clone the repo
+git clone https://github.com/sriram-dev-9/data-science-kl.git
+cd data-science-kl
 
-# Clone the repository
-git clone [https://github.com/yourusername/your-repo-name.git](https://github.com/yourusername/your-repo-name.git)
-cd your-repo-name
-
-# Install required dependencies
+# Install dependencies
 pip install numpy pandas scipy scikit-learn seaborn matplotlib
 
-
-💻 Usage
-
-Launch your Jupyter environment:
-
+# Launch Jupyter
 jupyter notebook
+```
 
+---
 
-Step through notebooks 1 through 3 to understand critical data refinement steps.
+## Suggested Order
 
-Open notebooks 4 and 5 to learn metric architectures and view a working production classifier.
+| Step | Notebook | Focus |
+|------|----------|-------|
+| 1 | Handling Missing Values | Data auditing |
+| 2 | Deleting Duplicates | Data cleaning |
+| 3 | Correcting Inconsistent Formats | Standardization |
+| 4 | Distance and Similarity | Metric foundations |
+| 5 | Advanced Analysis & Supervised Pipeline | Modeling |
+
+---
+
+## Tech Stack
+
+![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=flat&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)
+![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=flat&logo=scipy&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat&logo=jupyter&logoColor=white)
